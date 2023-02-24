@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ProductsView } from "../modules/products";
+import { CategoriesView } from "../modules/products";
 import { Login } from "../modules/auth";
 
 export const AppRouter = () => {
-  const status = "authenticatedf";
+  const status = "authenticated";
 
   return (
     <Routes>
       {status === "authenticated" ? (
-        <Route path="/*" element={<ProductsView />} />
+        <Route path="/*" element={<CategoriesView />} />
       ) : (
         <Route path="/auth/*" element={<Login />} />
       )}
